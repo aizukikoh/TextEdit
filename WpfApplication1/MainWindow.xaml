@@ -1,0 +1,31 @@
+﻿<Custom:RibbonWindow
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="WpfApplication1.MainWindow"
+        Title="VEditor" SizeToContent="WidthAndHeight" Closing="RibbonWindow_Closing"
+    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="138"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TreeView Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        <GridSplitter Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" DragDelta="GridSplitter_DragDelta" VerticalAlignment="Stretch"/>
+        <RichTextBox Grid.Row="1" Grid.Column="2" Height="auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" AcceptsReturn="True" AcceptsTab="True" AllowDrop="True" FontFamily="メイリオ" Name="editor" TextChanged="editor_TextChanged" VerticalAlignment="Stretch"/>
+        <Custom:Ribbon Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Custom:RibbonTab Header="Tab" Margin="0,0,0,0">
+                <Custom:RibbonGroup Header="グループ1">
+                    <Custom:RibbonButton Label="Open" Click="Button_Open"/>
+                    <Custom:RibbonButton Label="Save" Click="Button_Save"/>
+                </Custom:RibbonGroup>
+                <Custom:RibbonButton Label="Font" Click="Button_Font"/>
+            </Custom:RibbonTab>
+        </Custom:Ribbon>
+    </Grid>
+</Custom:RibbonWindow>
