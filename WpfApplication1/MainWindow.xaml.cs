@@ -16,12 +16,13 @@ namespace WpfApplication1
     {
         public MainWindow()
         {
-            InitializeComponent();
-
 			Top = Properties.Settings.Default.top;
 			Left = Properties.Settings.Default.left;
 			Width = Properties.Settings.Default.width;
 			Height = Properties.Settings.Default.height;
+
+			InitializeComponent();
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
